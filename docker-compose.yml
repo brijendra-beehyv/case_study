@@ -30,7 +30,7 @@ services:
   db:
     image: postgres
     volumes:
-      - ./${DB_DIR-db-data}:/var/lib/postgresql/data
+      - ./${DB_DIR_DB_DATA}:/var/lib/postgresql/
     ports:
       - '5432:5432'
     environment:
@@ -389,7 +389,7 @@ services:
   nginx:
     image: ghcr.io/sunbird-rc/sunbird-rc-nginx
     ports:
-      - '80:80'
+      - '5173:80'
     depends_on:
       registry:
         condition: service_healthy
